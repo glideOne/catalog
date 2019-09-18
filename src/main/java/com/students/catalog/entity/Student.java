@@ -15,8 +15,7 @@ public class Student {
     @Id
     @GeneratedValue
     private Long id;
-    private String firstName;
-    private String lastName;
+    private String name;
     private String passportNumber;
 
 }
