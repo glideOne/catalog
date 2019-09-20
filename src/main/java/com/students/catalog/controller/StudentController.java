@@ -34,7 +34,10 @@ public class StudentController {
 
     @DeleteMapping("/students/{id}")
     public void deleteStudent(@PathVariable long id) {
-        studentRepo.deleteById(id);
+//        studentRepo.deleteById(id);
+        if (studentRepo.deleteStudentById(id) == 0) {
+            throw new StudentNotFoundException("id-" + id);
+        }
     }
 
 }
